@@ -1,0 +1,33 @@
+controle = "SIM"
+while controle == "SIM" or controle == "S" :
+    # pegando dados
+    competidor = input("qual o nome do competidor").upper()
+    p1 = float(input("qual a distancia do primeiro salto"))
+    p2 = float(input("qual a distancia do segundo salto"))
+    p3 = float(input("qual a distancia do terceiro salto"))
+    p4 = float(input("qual a distancia do quarto salto"))
+    p5 = float(input("qual a distancia do quinto salto"))
+    # estruturas de decisão
+    maior_salto = p1
+    if p2 > maior_salto:
+        maior_salto = p2
+    if p3 > maior_salto:
+        maior_salto = p3
+    if p4 > maior_salto:
+        maior_salto = p4
+    if p5 > maior_salto:
+        maior_salto = p5
+
+    menor_salto = p1
+    if p2 < menor_salto:
+        menor_salto = p2
+    if p3 < menor_salto:
+        menor_salto = p3
+    if p4 < menor_salto:
+        menor_salto = p4
+    if p5 <  menor_salto:
+        menor_salto = p5
+
+    controle = input("deseja continuar inserindo competidores?").upper()
+
+print(f"maior {maior_salto} \n menor {menor_salto}")

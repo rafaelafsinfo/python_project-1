@@ -4,12 +4,33 @@ masv = 0.0
 controle = "SIM"
 while controle == "SIM" or controle == "S":
     # pegando dados
-    competidor = input("qual o nome do atleta").upper()
-    p1 = float(input("qual a distancia do primeiro salto"))
-    p2 = float(input("qual a distancia do segundo salto"))
-    p3 = float(input("qual a distancia do terceiro salto"))
-    p4 = float(input("qual a distancia do quarto salto"))
-    p5 = float(input("qual a distancia do quinto salto"))
+    competidor = input("qual o nome do atleta \n>>>").upper()
+    while competidor.isalpha() == False:
+        competidor = input(' Resposta invalida, tente digitar o somente o nome do atleta \n>>>')
+    p1 = input("qual a distancia do primeiro salto \n >>>")
+    while p1.isnumeric() == False:
+        p1 = input("resposta invalida \nqual a distancia do primeiro salto:\n>>> ")
+    p1 = float(p1)
+
+    p2 = input("qual a distancia do segundo salto \n>>>")
+    while p2.isnumeric() == False:
+        p2 = input("resposta invalida \nqual a distancia do primeiro salto:\n>>> ")
+    p2 = float(p2)
+
+    p3 = input("qual a distancia do terceiro salto \n>>>")
+    while p3.isnumeric() == False:
+        p3 = input("resposta invalida \nqual a distancia do primeiro salto:\n>>> ")
+    p3 = float(p3)
+
+    p4 = input("qual a distancia do quarto salto \n>>>")
+    while p4.isnumeric() == False:
+        p4 = input("resposta invalida \nqual a distancia do primeiro salto:\n>>> ")
+    p4 = float(p4)
+
+    p5 = input("qual a distancia do quinto salto \n>>>")
+    while p5.isnumeric() == False:
+        p5 = input("resposta invalida \nqual a distancia do primeiro salto:\n>>> ")
+    p5 = float(p5)
     # estruturas de decisão maior/menor
     mas = p1
     if p2 > mas:
@@ -33,15 +54,15 @@ while controle == "SIM" or controle == "S":
     # calculo da média dos saltos
     smedia = ((p1 + p2 + p3 + p4 + p5) - (mns + mas)) / 3
     # imprimindo informaçoes dos candidatos
-    print(f"atleta {competidor}\n")
-    print(f"primeiro salto -> {p1}")
-    print(f"segundo salto -> {p2}")
-    print(f"terceiro salto -> {p3}")
-    print(f"quarto salto -> {p4}")
-    print(f"quinto salto -> {p5}\n")
-    print(f"o maior salto foi -> {mas}")
-    print(f"o menor salto foi -> {mns}")
-    print(f"a média dos saltos foi -> {smedia}")
+    print(f"atleta \n-> {competidor}\n")
+    print(f"primeiro salto \n-> {p1}")
+    print(f"segundo salto \n-> {p2}")
+    print(f"terceiro salto \n-> {p3}")
+    print(f"quarto salto \n-> {p4}")
+    print(f"quinto salto \n-> {p5}\n")
+    print(f"o maior salto foi \n-> {mas}")
+    print(f"o menor salto foi \n-> {mns}")
+    print(f"a média dos saltos foi \n-> {smedia}")
     # continuar inserindo dados
     controle = input("deseja continuar inserindo competidores?").upper()
     # teste de qual foi o mlr competidor

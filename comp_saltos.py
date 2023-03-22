@@ -1,13 +1,17 @@
-mlr_comp = "nenhum"
+mlr_comp = ''
 mlr_salto = 0.0
 masv = 0.0
-controle = "SIM"
-while controle == "SIM" or controle == "S":
-    # pegando dados
-    competidor = input("qual o nome do atleta \n>>>").upper()
+controle = 'SIM'
+mas = 0
+mns = 0
+
+while controle == 'SIM' or controle == "S":
+
+    competidor = input('qual o nome do atleta \n>>>').upper()
     while competidor.isalpha() == False:
         competidor = input(' Resposta invalida, tente digitar o somente o nome do atleta \n>>>')
-    p1 = input("qual a distancia do primeiro salto \n >>>")
+
+    p1 = input('qual a distancia do primeiro salto \n >>>')
     while p1.isnumeric() == False:
         p1 = input("resposta invalida \nqual a distancia do primeiro salto:\n>>> ")
     p1 = float(p1)
@@ -31,8 +35,7 @@ while controle == "SIM" or controle == "S":
     while p5.isnumeric() == False:
         p5 = input("resposta invalida \nqual a distancia do primeiro salto:\n>>> ")
     p5 = float(p5)
-    # estruturas de decisão maior/menor
-    mas = p1
+
     if p2 > mas:
         mas = p2
     if p3 > mas:
@@ -42,7 +45,6 @@ while controle == "SIM" or controle == "S":
     if p5 > mas:
         mas = p5
 
-    mns = p1
     if p2 < mns:
         mns = p2
     if p3 < mns:
@@ -51,9 +53,9 @@ while controle == "SIM" or controle == "S":
         menor_salto = p4
     if p5 < mns:
         mns = p5
-    # calculo da média dos saltos
+
     smedia = ((p1 + p2 + p3 + p4 + p5) - (mns + mas)) / 3
-    # imprimindo informaçoes dos candidatos
+
     print(f"atleta \n-> {competidor}\n")
     print(f"primeiro salto \n-> {p1}")
     print(f"segundo salto \n-> {p2}")
@@ -63,16 +65,17 @@ while controle == "SIM" or controle == "S":
     print(f"o maior salto foi \n-> {mas}")
     print(f"o menor salto foi \n-> {mns}")
     print(f"a média dos saltos foi \n-> {smedia}")
-    # continuar inserindo dados
+
     controle = input("deseja continuar inserindo competidores?").upper()
-    # teste de qual foi o mlr competidor
+
     if smedia > mlr_salto:
         mlr_comp = competidor
         mlr_salto = smedia
         masv = mas
+
     if smedia == mlr_salto:
         if mas > masv:
             mlr_comp = competidor
             mlr_salto = smedia
-# mostrando o melhor competidor
+
 print(f"resultado final:\n{mlr_comp} -> {mlr_salto}")
